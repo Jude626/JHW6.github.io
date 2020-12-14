@@ -10,12 +10,37 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <!--Put Header for Title-->
+    <!-- Put Header for Title-->
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-5 text-center">Weather Dashboard</h1>
+            <h1 class="display-3 text-center">Weather Dashboard</h1>
         </div>
     </div>
-
+    
+    <!-- Create Container for Main Content -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Create Search Column with width of 4/12 for the left side -->
+            <div class="col-4 searchCol">
+                <!-- Create the Search button-->
+                <h4>Search for a city:</h4>
+                <div class="input-group mb-4">
+                    <!-- Create User input section -->
+                    <input type="text" class="form-control" id="cityInput" placeholder="Enter City Here">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-primary" type="button" id="citySearchBtn">
+                            <img src="Assets/search.png" width="30px"/></button>
+                        </div>
+                    </div>
+                    <!-- Create a List for the city searches -->
+                    <div class="list-group" id="cityList"></div>                    
+                </div>
+                <!-- Create Results Column with a width of 8/12 for the right side -->
+                <div class="col-8">
+                    <div class="card" style="width: 100%;" id="weatherContainer"></div>
+                      <div id="5dayContainer"></div>
+                </div>
+        </div>
+    </div>
 </body>
 </html>
