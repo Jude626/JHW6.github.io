@@ -131,20 +131,39 @@ async function displayFiveDayForecast() {
         method: "GET"
       })
       // Create div for the forecast area
-      
+      var forecastDiv = $("<div  id='fiveDayForecast'>");
       // Make a header for the forecast, append it
-     
+      var forecastHeader = $("<h5 class='card-header border-secondary'>").text("5 Day Forecast");
+      forecastDiv.append(forecastHeader);
       // Create a card deck variable to add multiple cards
-      
+      var cardDeck = $("<div  class='card-deck'>");
+      forecastDiv.append(cardDeck);
       // Create a for loop for 5 days using i<5 
-      
+      console.log(response);
+      for (i=0; i<5;i++){
+          var forecastCard = $("<div class='card mb-3 mt-3'>");
+          var cardBody = $("<div class='card-body'>");
+          var date = new Date();
+          var val=(date.getMonth()+1)+"/"+(date.getDate()+i+1)+"/"+date.getFullYear();
+          var forecastDate = $("<h5 class='card-title'>").text(val);
         // Create a cardbody for the date
-        
+        cardBody.append(forecastDate);
+        var getCurrentWeatherIcon = response.list[i].weather[0].icon;
+        console.log(getCurrentWeatherIcon);
         // Add the weather icon from openweathermap.org, append it
-        
+        var displayWeatherIcon = $("<img src = http://openweathermap.org/img/wn/" + getCurrentWeatherIcon + ".png />");
+        cardBody.append(displayWeatherIcon);
         // Add the temp and append it
-       
+        var getTemp = response.list[i].main.temp;
+        var tempEl = $("<p class='card-text'>").text("Temp: "+getTemp+"° F");
+        cardBody.append(tempEl);
         // Add the humidity and append it
-       
+        var getHumidity = response.list[i].main.humidity;
+        var humidityEl = $("<p class='card-text'>").text("Humidity: "+getHumidity+"%");
+        cardBody.append(humidityEl);
         // Add the cards and deck and append them
-       
+        forecastCard.append(cardBody);
+        cardDeck.append(forecastCard);
+      } 
+      $("#forecastContainer").html(forecastDiv);
+    }
