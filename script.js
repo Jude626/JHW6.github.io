@@ -36,4 +36,8 @@ function initWeather() {
 // CReate function to save the city array
 function storeCityArray() {
     localStorage.setItem("cities", JSON.stringify(cityList));
+    }
+// Create function to save current city to array
+function storeCurrentCity() {
+    localStorage.setItem("currentCity", JSON.stringify(cityname));
 }
