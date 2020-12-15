@@ -104,3 +104,20 @@ async function displayWeather() {
             url: uvURL,
             method: "GET"
         })
+
+    // Created if & else statements for UV index results
+    var getUVIndex = uvResponse.value;
+    var uvNumber = $("<span>");
+    if (getUVIndex > 0 && getUVIndex <= 4){
+        uvNumber.addClass("favorable");
+    }else if(getUVIndex >= 4.01 && getUVIndex <= 8){
+        uvNumber.addClass("moderate");
+    }else if(getUVIndex >= 8.01 && getUVIndex <= 11){
+        uvNumber.addClass("severe");
+    } 
+    uvNumber.text(getUVIndex);
+    var uvIndexEl = $("<p class='card-text'>").text("UV Index: ");
+    uvNumber.appendTo(uvIndexEl);
+    currentWeatherDiv.append(uvIndexEl);
+    $("#weatherContainer").html(currentWeatherDiv);
+}
