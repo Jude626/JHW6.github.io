@@ -41,3 +41,20 @@ function storeCityArray() {
 function storeCurrentCity() {
     localStorage.setItem("currentCity", JSON.stringify(cityname));
 }
+// Create event handler when you click the orange search button
+$("#citySearchBtn").on("click", function(event){
+    event.preventDefault();
+
+    cityname = $("#cityInput").val().trim();
+     if (cityList.length >= 5){  
+        cityList.shift();
+        cityList.push(cityname);
+    }else{
+    cityList.push(cityname);
+    }
+    storeCurrentCity();
+    storeCityArray();
+    renderCities();
+    displayWeather();
+    displayFiveDayForecast();
+});
