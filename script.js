@@ -69,3 +69,22 @@ async function displayWeather() {
         method: "GET"
       })
         console.log(response);
+        // Create div for main body
+      
+        // Create current date
+     
+        // Create current weather icon
+        
+        // Create current city and append it
+        
+        // Create variable for temperature
+
+        // get temperature and add ° F, append it
+        
+        // get humidity and add %, append it
+        
+        // get wind speed in mph, and append it
+        
+        // add latitude & longitude variables
+       
+        // add api for latitude/longitude coordinates for the city searched
