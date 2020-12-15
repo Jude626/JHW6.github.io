@@ -24,3 +24,12 @@ function initCityList() {
         cityList = storedCities;
     } renderCities();
     }
+// Create function to display the stored city's weather forecast
+function initWeather() {
+    var storedWeather = JSON.parse(localStorage.getItem("currentCity"));
+    if (storedWeather !== null) {
+        cityname = storedWeather;
+        displayWeather();
+        displayFiveDayForecast();
+    }
+}
