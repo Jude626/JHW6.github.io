@@ -167,3 +167,12 @@ async function displayFiveDayForecast() {
       } 
       $("#forecastContainer").html(forecastDiv);
     }
+// Create the function to call city in list back into main display
+function historyDisplayWeather(){
+    cityname = $(this).attr("data-name");
+    displayWeather();
+    displayFiveDayForecast();
+    console.log(cityname);
+}
+// Create event listener when you click the city in history list
+$(document).on("click", ".city", historyDisplayWeather);
