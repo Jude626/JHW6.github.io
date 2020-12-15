@@ -121,3 +121,12 @@ async function displayWeather() {
     currentWeatherDiv.append(uvIndexEl);
     $("#weatherContainer").html(currentWeatherDiv);
 }
+// Create ajax and api call for the 5-day forecast container
+async function displayFiveDayForecast() {
+
+    var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q="+cityname+"&units=imperial&appid=d3b85d453bf90d469c82e650a0a3da26";
+
+    var response = await $.ajax({
+        url: queryURL,
+        method: "GET"
+      })
