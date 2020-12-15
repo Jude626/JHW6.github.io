@@ -130,3 +130,21 @@ async function displayFiveDayForecast() {
         url: queryURL,
         method: "GET"
       })
+      // Create div for the forecast area
+      
+      // Make a header for the forecast, append it
+     
+      // Create a card deck variable to add multiple cards
+      
+      // Create a for loop for 5 days using i<5 
+      
+        // Create a cardbody for the date
+        
+        // Add the weather icon from openweathermap.org, append it
+        
+        // Add the temp and append it
+       
+        // Add the humidity and append it
+       
+        // Add the cards and deck and append them
+       
