@@ -58,3 +58,14 @@ $("#citySearchBtn").on("click", function(event){
     displayWeather();
     displayFiveDayForecast();
 });
+// Create api ajax call function to search & display the user inputted city forecast; linking the given openweathermap api
+
+async function displayWeather() {
+
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityname + "&units=imperial&appid=d3b85d453bf90d469c82e650a0a3da26";
+
+    var response = await $.ajax({
+        url: queryURL,
+        method: "GET"
+      })
+        console.log(response);
